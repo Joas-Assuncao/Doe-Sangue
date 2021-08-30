@@ -1,0 +1,131 @@
+main {
+    background: var(--black);
+    padding-top: 6.125rem;
+    padding-bottom: 6.125rem;
+
+    .paragraphs {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 5rem;
+
+        p {
+            max-width: 31.25rem;
+
+            font-size: 1.25rem;
+
+            a {
+                color: var(--red);
+            }
+        }
+    }
+
+    .image {
+        width: 100%;
+        text-align: center;
+
+        img {
+            max-width: 34.375rem;
+        }
+    }
+
+    #donates {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+    
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    
+    .input-button {
+        display: flex;
+        align-items: center;
+        
+        input {
+            width: 70%;
+
+            padding: 1.5rem 2.5rem 1.5rem 1rem;
+            
+            border-radius: 2rem 0 0 2rem;
+            border-bottom: 2px solid var(--blue2);
+            border-left: 2px solid var(--blue2);
+            border-top: 2px solid var(--blue2);
+            border-right: none;
+
+            color: var(--black);
+
+            font-size: 1.1rem;
+            
+            &::placeholder {
+                color: var(--black);
+                
+                font-size: 1.075rem;
+
+                opacity: 50%;
+            }
+        }
+    
+        button {
+            width: 30%;
+            
+            padding: 1.5rem;
+    
+            border-radius: 0 2rem 2rem 0;
+            
+            border-bottom: 2px solid var(--blue2);
+            border-right: 2px solid var(--blue2);
+            border-top: 2px solid var(--blue2);
+            border-left: none;
+    
+            background: var(--blue);
+
+            font-size: 1.2rem;
+
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                box-shadow: 0 0 10px var(--blue);
+                opacity: 80%;
+            }
+        }
+    }
+
+    .table {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    table {
+        border: 1px solid var(--white);
+        border-radius: 1rem;
+        padding-bottom: 2rem;
+
+        tr {
+            &:nth-of-type(2) td {
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+
+            th {
+                font-size: 1.5rem;
+                font-weight: bold;
+
+                padding: 1rem;
+                
+                border-bottom: 1px solid var(--white)
+            }
+            
+            td {
+                padding: 1rem 4rem;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@use './modules/header';
+@use './modules/main';
+@use './modules/footer';
+@use './modules/mediaQueries';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+
+    color: var(--white);
+}
+
+:root {
+    --white: #f1f1f1;
+    --blue: #080746;
+    --blue2: #06053a;
+    --black: #212121;
+    --red: #FF6366;
+}
+

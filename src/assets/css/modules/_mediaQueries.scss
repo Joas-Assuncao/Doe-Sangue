@@ -1,0 +1,152 @@
+@media(max-width: 1230px) {
+    html{
+        font-size: 93.75%;
+    }
+
+    header {
+        nav {
+            width: 45%;
+        }
+    }
+}
+
+@media(max-width: 1130px) {
+    article.paragraphs {
+        flex-direction: column;
+        padding: 0 2rem 3rem 2rem;
+
+        p {
+            padding: 3rem 0 1rem 0;
+            text-align: center;
+        }
+    }
+    
+    div.image {
+        img {
+            max-width: 33rem;
+        }
+    }
+}
+
+@media(max-width: 850px) {
+    divs {
+        height: 3px;
+        background: var(--white);
+    }
+
+    header {
+        position: static;
+    }
+    
+    nav {
+        label {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-evenly;
+            flex-direction: column;
+
+            height: 1rem;
+            width: 100%;
+        
+            div.first-line {
+                @extend divs;
+                width: 2rem;
+            }
+
+            div.second-line {
+                @extend divs;
+                width: 1rem;
+            }
+        }
+
+        a {
+            display: none;
+        }
+    
+        .navbar {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: absolute;
+
+            .links-nav {
+                display: block;
+            }
+        }
+    }
+
+    main {
+        padding: 0;
+    }
+}
+
+@media(max-width: 640px) {
+    footer {
+        height: 25vh;
+        
+        div { 
+            h4 {
+                font-size: 1.25rem;
+                color: var(--black);
+            }
+    
+            a {
+                font-size: 1rem;
+                color: var(--black);
+            }
+        }
+    }
+}
+
+@media(max-width: 540px) {
+    div.image {
+        img {
+            max-width: 26rem;
+        }
+    }
+}
+
+@media(max-width: 520px) {
+    footer {
+        div { 
+            h4 {
+                font-size: 1.15rem;
+                color: var(--black);
+            }
+    
+            a {
+                font-size: .9rem;
+                color: var(--black);
+            }
+        }
+    }
+}
+
+@media(max-width: 480px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+@media(max-width: 450px) {
+    html {
+        font-size: 81.25%;
+    }
+}
+
+@media(max-width: 420px) {
+    footer {
+        height: 20vh;
+        padding: .75rem 1rem;
+
+        div {
+            text-align: left;
+        }
+    }
+}
+
+@media(max-width: 375px) {
+    html {
+        font-size: 75%;
+    }
+}
