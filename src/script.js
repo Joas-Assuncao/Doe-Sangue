@@ -194,3 +194,12 @@ function createTable(type) {
         div.appendChild(table);
     }
 }
+
+
+
+/*    NAVBAR    */
+
+const buttonMenu = document.querySelector('#button-menu');
+buttonMenu.addEventListener('click', (event) => {
+    
+})
