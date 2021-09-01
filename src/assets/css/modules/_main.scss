@@ -1,7 +1,6 @@
 main {
     background: var(--black);
     padding-top: 6.125rem;
-    padding-bottom: 6.125rem;
 
     .paragraphs {
         display: flex;
@@ -44,6 +43,7 @@ main {
     .input-button {
         display: flex;
         align-items: center;
+        padding: 3rem 1.5rem;
         
         input {
             width: 70%;
