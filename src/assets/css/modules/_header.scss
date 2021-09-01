@@ -30,14 +30,70 @@ header {
 
     nav {
         display: flex;
-        justify-content: space-between;
-
+        align-items: center;
+        justify-content: flex-end;
         width: 40%;
+        
+        label {
+            font-size: 0;
+            display: none;
 
-        a {
-            font-size: 1.2rem;
-            text-decoration: underline;
-            text-transform: capitalize;
+            img {
+                max-width: 2rem;
+            }
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+
+            li {
+                list-style: none;
+                a {
+                    font-size: 1.2rem;
+                    text-decoration: underline;
+                    text-transform: capitalize;
+                }
+            }
         }
     }
+}
+
+.menu-on {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 100vh;
+    width: 100vw;
+    
+    top: 0;
+    left: 0;
+    background: var(--blue);
+    
+    position: absolute;
+    overflow-y: none;
+    transition: .5s;
+
+    li {
+        a {
+            display: block;
+            font-size: 1.5rem;
+            transition: .5s;
+            padding: .3rem .7rem;
+
+            &:hover {
+                background: #020225;
+                border-radius: 1rem;
+                opacity: 50%;
+                box-shadow: 0 0 10px 10px #020225;
+            }
+        }
+    }
+}
+
+.image-menu {
+    position: absolute;
 }

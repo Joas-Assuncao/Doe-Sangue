@@ -21,13 +21,59 @@ header h2 img {
 }
 header nav {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
   width: 40%;
 }
-header nav a {
+header nav label {
+  font-size: 0;
+  display: none;
+}
+header nav label img {
+  max-width: 2rem;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
   font-size: 1.2rem;
   text-decoration: underline;
   text-transform: capitalize;
+}
+
+.menu-on {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: var(--blue);
+  position: absolute;
+  overflow-y: none;
+  transition: 0.5s;
+}
+.menu-on li a {
+  display: block;
+  font-size: 1.5rem;
+  transition: 0.5s;
+  padding: 0.3rem 0.7rem;
+}
+.menu-on li a:hover {
+  background: #020225;
+  border-radius: 1rem;
+  opacity: 50%;
+  box-shadow: 0 0 10px 10px #020225;
+}
+
+.image-menu {
+  position: absolute;
 }
 
 main {
@@ -60,8 +106,8 @@ main #donates {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 main .input-button {
   display: flex;
@@ -109,7 +155,7 @@ main .table {
 main table {
   border: 1px solid var(--white);
   border-radius: 1rem;
-  padding-bottom: 2rem;
+  margin: 0 0 2rem 0;
 }
 main table tr:nth-of-type(2) td {
   font-size: 1.25rem;
@@ -141,11 +187,11 @@ footer div {
   height: 100%;
 }
 footer div h4 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--black);
 }
 footer div a {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--black);
 }
 
@@ -173,40 +219,17 @@ footer div a {
   }
 }
 @media (max-width: 850px) {
-  divs, nav label div.second-line, nav label div.first-line {
-    height: 3px;
-    background: var(--white);
-  }
-
   header {
     position: static;
   }
-
-  nav label {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: 1rem;
-    width: 100%;
+  header nav {
+    justify-content: flex-end;
   }
-  nav label div.first-line {
-    width: 2rem;
-  }
-  nav label div.second-line {
-    width: 1rem;
-  }
-  nav a {
-    display: none;
-  }
-  nav .navbar {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: absolute;
-  }
-  nav .navbar .links-nav {
+  header nav label {
     display: block;
+  }
+  header nav ul li a {
+    display: none;
   }
 
   main {
@@ -263,6 +286,31 @@ footer div a {
 @media (max-width: 375px) {
   html {
     font-size: 75%;
+  }
+}
+@media (max-width: 330px) {
+  main div.image img {
+    max-width: 21rem;
+  }
+  main div.input-button input {
+    padding: 1rem 0 1rem 0.75rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+  }
+  main div.input-button button {
+    padding: 1rem;
+    border-radius: 0 1.5rem 1.5rem 0;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  footer div {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 * {

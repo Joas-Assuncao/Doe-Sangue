@@ -2,6 +2,60 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/assets/modules/navbar.js":
+/*!**************************************!*\
+  !*** ./src/assets/modules/navbar.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "navbar": () => (/* binding */ navbar)
+/* harmony export */ });
+function navbar() {
+  var label = document.querySelector('#navbar');
+  var ul = document.querySelector('#list');
+  label.addEventListener('click', function () {
+    ul.classList.toggle('menu-on');
+    label.classList.toggle('image-menu');
+    handleNavbarAuthentications(label);
+
+    if (ul.classList.contains('menu-on')) {
+      handleLinksNavbar(ul, label);
+    }
+  });
+}
+
+function handleNavbarAuthentications(label) {
+  if (label.classList.contains('image-menu')) {
+    var img = label.querySelector('img');
+    img.src = './src/assets/public/close.svg';
+    document.body.style.overflow = 'hidden';
+  } else {
+    var _img = label.querySelector('img');
+
+    _img.src = './src/assets/public/menu.svg';
+    document.body.style.overflow = '';
+  }
+}
+
+function handleLinksNavbar(ul, label) {
+  var links = document.querySelectorAll('header>nav>ul>li>a');
+  links.forEach(function (value) {
+    value.addEventListener('click', function () {
+      var img = label.querySelector('img');
+      ul.classList.remove('menu-on');
+      label.classList.remove('image-menu');
+      img.src = './src/assets/public/menu.svg';
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+;
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/assets/css/style.css":
 /*!************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/assets/css/style.css ***!
@@ -21,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  padding: 1.5rem 1.5rem 1.5rem 0.7rem;\n  background: var(--blue);\n  position: fixed;\n}\nheader h2 {\n  display: flex;\n  align-items: center;\n  letter-spacing: 0.4rem;\n  font-size: 1.5rem;\n  font-family: \"Rum Raisin\", sans-serif;\n}\nheader h2 img {\n  height: 3.125rem;\n  width: 3.125rem;\n  margin-right: 1rem;\n}\nheader nav {\n  display: flex;\n  justify-content: space-between;\n  width: 40%;\n}\nheader nav a {\n  font-size: 1.2rem;\n  text-decoration: underline;\n  text-transform: capitalize;\n}\n\nmain {\n  background: var(--black);\n  padding-top: 6.125rem;\n  padding-bottom: 6.125rem;\n}\nmain .paragraphs {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5rem;\n}\nmain .paragraphs p {\n  max-width: 31.25rem;\n  font-size: 1.25rem;\n}\nmain .paragraphs p a {\n  color: var(--red);\n}\nmain .image {\n  width: 100%;\n  text-align: center;\n}\nmain .image img {\n  max-width: 34.375rem;\n}\nmain #donates {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  margin-top: 4rem;\n  margin-bottom: 4rem;\n}\nmain .input-button {\n  display: flex;\n  align-items: center;\n}\nmain .input-button input {\n  width: 70%;\n  padding: 1.5rem 2.5rem 1.5rem 1rem;\n  border-radius: 2rem 0 0 2rem;\n  border-bottom: 2px solid var(--blue2);\n  border-left: 2px solid var(--blue2);\n  border-top: 2px solid var(--blue2);\n  border-right: none;\n  color: var(--black);\n  font-size: 1.1rem;\n}\nmain .input-button input::placeholder {\n  color: var(--black);\n  font-size: 1.075rem;\n  opacity: 50%;\n}\nmain .input-button button {\n  width: 30%;\n  padding: 1.5rem;\n  border-radius: 0 2rem 2rem 0;\n  border-bottom: 2px solid var(--blue2);\n  border-right: 2px solid var(--blue2);\n  border-top: 2px solid var(--blue2);\n  border-left: none;\n  background: var(--blue);\n  font-size: 1.2rem;\n  cursor: pointer;\n  transition: 0.3s;\n}\nmain .input-button button:hover {\n  box-shadow: 0 0 10px var(--blue);\n  opacity: 80%;\n}\nmain .table {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\nmain table {\n  border: 1px solid var(--white);\n  border-radius: 1rem;\n  padding-bottom: 2rem;\n}\nmain table tr:nth-of-type(2) td {\n  font-size: 1.25rem;\n  font-weight: bold;\n}\nmain table tr th {\n  font-size: 1.5rem;\n  font-weight: bold;\n  padding: 1rem;\n  border-bottom: 1px solid var(--white);\n}\nmain table tr td {\n  padding: 1rem 4rem;\n  text-align: center;\n}\n\nfooter {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 30vh;\n  padding: 1rem 3rem;\n}\nfooter div {\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n  justify-content: space-evenly;\n  height: 100%;\n}\nfooter div h4 {\n  font-size: 1.5rem;\n  color: var(--black);\n}\nfooter div a {\n  font-size: 1.25rem;\n  color: var(--black);\n}\n\n@media (max-width: 1230px) {\n  html {\n    font-size: 93.75%;\n  }\n\n  header nav {\n    width: 45%;\n  }\n}\n@media (max-width: 1130px) {\n  article.paragraphs {\n    flex-direction: column;\n    padding: 0 2rem 3rem 2rem;\n  }\n  article.paragraphs p {\n    padding: 3rem 0 1rem 0;\n    text-align: center;\n  }\n\n  div.image img {\n    max-width: 33rem;\n  }\n}\n@media (max-width: 850px) {\n  divs, nav label div.second-line, nav label div.first-line {\n    height: 3px;\n    background: var(--white);\n  }\n\n  header {\n    position: static;\n  }\n\n  nav label {\n    display: flex;\n    align-items: flex-end;\n    justify-content: space-evenly;\n    flex-direction: column;\n    height: 1rem;\n    width: 100%;\n  }\n  nav label div.first-line {\n    width: 2rem;\n  }\n  nav label div.second-line {\n    width: 1rem;\n  }\n  nav a {\n    display: none;\n  }\n  nav .navbar {\n    height: 100vh;\n    width: 100vw;\n    overflow: hidden;\n    position: absolute;\n  }\n  nav .navbar .links-nav {\n    display: block;\n  }\n\n  main {\n    padding: 0;\n  }\n}\n@media (max-width: 640px) {\n  footer {\n    height: 25vh;\n  }\n  footer div h4 {\n    font-size: 1.25rem;\n    color: var(--black);\n  }\n  footer div a {\n    font-size: 1rem;\n    color: var(--black);\n  }\n}\n@media (max-width: 540px) {\n  div.image img {\n    max-width: 26rem;\n  }\n}\n@media (max-width: 520px) {\n  footer div h4 {\n    font-size: 1.15rem;\n    color: var(--black);\n  }\n  footer div a {\n    font-size: 0.9rem;\n    color: var(--black);\n  }\n}\n@media (max-width: 480px) {\n  html {\n    font-size: 87.5%;\n  }\n}\n@media (max-width: 450px) {\n  html {\n    font-size: 81.25%;\n  }\n}\n@media (max-width: 420px) {\n  footer {\n    height: 20vh;\n    padding: 0.75rem 1rem;\n  }\n  footer div {\n    text-align: left;\n  }\n}\n@media (max-width: 375px) {\n  html {\n    font-size: 75%;\n  }\n}\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n  outline: none;\n  font-family: \"Poppins\", sans-serif;\n  color: var(--white);\n}\n\n:root {\n  --white: #f1f1f1;\n  --blue: #080746;\n  --blue2: #06053a;\n  --black: #212121;\n  --red: #FF6366;\n}\n\n/*# sourceMappingURL=style.css.map */\n", "",{"version":3,"sources":["webpack://./src/assets/css/modules/_header.scss","webpack://./src/assets/css/style.css","webpack://./src/assets/css/modules/_main.scss","webpack://./src/assets/css/modules/_footer.scss","webpack://./src/assets/css/modules/_mediaQueries.scss","webpack://./src/assets/css/style.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "header {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  padding: 1.5rem 1.5rem 1.5rem 0.7rem;\n  background: var(--blue);\n  position: fixed;\n}\nheader h2 {\n  display: flex;\n  align-items: center;\n  letter-spacing: 0.4rem;\n  font-size: 1.5rem;\n  font-family: \"Rum Raisin\", sans-serif;\n}\nheader h2 img {\n  height: 3.125rem;\n  width: 3.125rem;\n  margin-right: 1rem;\n}\nheader nav {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  width: 40%;\n}\nheader nav label {\n  font-size: 0;\n  display: none;\n}\nheader nav label img {\n  max-width: 2rem;\n}\nheader nav ul {\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n}\nheader nav ul li {\n  list-style: none;\n}\nheader nav ul li a {\n  font-size: 1.2rem;\n  text-decoration: underline;\n  text-transform: capitalize;\n}\n\n.menu-on {\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-evenly;\n  height: 100vh;\n  width: 100vw;\n  top: 0;\n  left: 0;\n  background: var(--blue);\n  position: absolute;\n  overflow-y: none;\n  transition: 0.5s;\n}\n.menu-on li a {\n  display: block;\n  font-size: 1.5rem;\n  transition: 0.5s;\n  padding: 0.3rem 0.7rem;\n}\n.menu-on li a:hover {\n  background: #020225;\n  border-radius: 1rem;\n  opacity: 50%;\n  box-shadow: 0 0 10px 10px #020225;\n}\n\n.image-menu {\n  position: absolute;\n}\n\nmain {\n  background: var(--black);\n  padding-top: 6.125rem;\n  padding-bottom: 6.125rem;\n}\nmain .paragraphs {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 5rem;\n}\nmain .paragraphs p {\n  max-width: 31.25rem;\n  font-size: 1.25rem;\n}\nmain .paragraphs p a {\n  color: var(--red);\n}\nmain .image {\n  width: 100%;\n  text-align: center;\n}\nmain .image img {\n  max-width: 34.375rem;\n}\nmain #donates {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  margin-top: 3rem;\n  margin-bottom: 3rem;\n}\nmain .input-button {\n  display: flex;\n  align-items: center;\n}\nmain .input-button input {\n  width: 70%;\n  padding: 1.5rem 2.5rem 1.5rem 1rem;\n  border-radius: 2rem 0 0 2rem;\n  border-bottom: 2px solid var(--blue2);\n  border-left: 2px solid var(--blue2);\n  border-top: 2px solid var(--blue2);\n  border-right: none;\n  color: var(--black);\n  font-size: 1.1rem;\n}\nmain .input-button input::placeholder {\n  color: var(--black);\n  font-size: 1.075rem;\n  opacity: 50%;\n}\nmain .input-button button {\n  width: 30%;\n  padding: 1.5rem;\n  border-radius: 0 2rem 2rem 0;\n  border-bottom: 2px solid var(--blue2);\n  border-right: 2px solid var(--blue2);\n  border-top: 2px solid var(--blue2);\n  border-left: none;\n  background: var(--blue);\n  font-size: 1.2rem;\n  cursor: pointer;\n  transition: 0.3s;\n}\nmain .input-button button:hover {\n  box-shadow: 0 0 10px var(--blue);\n  opacity: 80%;\n}\nmain .table {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n}\nmain table {\n  border: 1px solid var(--white);\n  border-radius: 1rem;\n  margin: 0 0 2rem 0;\n}\nmain table tr:nth-of-type(2) td {\n  font-size: 1.25rem;\n  font-weight: bold;\n}\nmain table tr th {\n  font-size: 1.5rem;\n  font-weight: bold;\n  padding: 1rem;\n  border-bottom: 1px solid var(--white);\n}\nmain table tr td {\n  padding: 1rem 4rem;\n  text-align: center;\n}\n\nfooter {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: 30vh;\n  padding: 1rem 3rem;\n}\nfooter div {\n  display: flex;\n  text-align: center;\n  flex-direction: column;\n  justify-content: space-evenly;\n  height: 100%;\n}\nfooter div h4 {\n  font-size: 1.25rem;\n  color: var(--black);\n}\nfooter div a {\n  font-size: 1rem;\n  color: var(--black);\n}\n\n@media (max-width: 1230px) {\n  html {\n    font-size: 93.75%;\n  }\n\n  header nav {\n    width: 45%;\n  }\n}\n@media (max-width: 1130px) {\n  article.paragraphs {\n    flex-direction: column;\n    padding: 0 2rem 3rem 2rem;\n  }\n  article.paragraphs p {\n    padding: 3rem 0 1rem 0;\n    text-align: center;\n  }\n\n  div.image img {\n    max-width: 33rem;\n  }\n}\n@media (max-width: 850px) {\n  header {\n    position: static;\n  }\n  header nav {\n    justify-content: flex-end;\n  }\n  header nav label {\n    display: block;\n  }\n  header nav ul li a {\n    display: none;\n  }\n\n  main {\n    padding: 0;\n  }\n}\n@media (max-width: 640px) {\n  footer {\n    height: 25vh;\n  }\n  footer div h4 {\n    font-size: 1.25rem;\n    color: var(--black);\n  }\n  footer div a {\n    font-size: 1rem;\n    color: var(--black);\n  }\n}\n@media (max-width: 540px) {\n  div.image img {\n    max-width: 26rem;\n  }\n}\n@media (max-width: 520px) {\n  footer div h4 {\n    font-size: 1.15rem;\n    color: var(--black);\n  }\n  footer div a {\n    font-size: 0.9rem;\n    color: var(--black);\n  }\n}\n@media (max-width: 480px) {\n  html {\n    font-size: 87.5%;\n  }\n}\n@media (max-width: 450px) {\n  html {\n    font-size: 81.25%;\n  }\n}\n@media (max-width: 420px) {\n  footer {\n    height: 20vh;\n    padding: 0.75rem 1rem;\n  }\n  footer div {\n    text-align: left;\n  }\n}\n@media (max-width: 375px) {\n  html {\n    font-size: 75%;\n  }\n}\n@media (max-width: 330px) {\n  main div.image img {\n    max-width: 21rem;\n  }\n  main div.input-button input {\n    padding: 1rem 0 1rem 0.75rem;\n    border-radius: 1.5rem 0 0 1.5rem;\n  }\n  main div.input-button button {\n    padding: 1rem;\n    border-radius: 0 1.5rem 1.5rem 0;\n  }\n\n  footer {\n    flex-direction: column;\n    justify-content: space-evenly;\n    align-items: center;\n  }\n  footer div {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n  }\n}\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n  outline: none;\n  font-family: \"Poppins\", sans-serif;\n  color: var(--white);\n}\n\n:root {\n  --white: #f1f1f1;\n  --blue: #080746;\n  --blue2: #06053a;\n  --black: #212121;\n  --red: #FF6366;\n}\n\n/*# sourceMappingURL=style.css.map */\n", "",{"version":3,"sources":["webpack://./src/assets/css/modules/_header.scss","webpack://./src/assets/css/style.css","webpack://./src/assets/css/modules/_main.scss","webpack://./src/assets/css/modules/_footer.scss","webpack://./src/assets/css/modules/_mediaQueries.scss","webpack://./src/assets/css/style.scss"],"names":[],"mappings":"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","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -555,12 +609,13 @@ var __webpack_exports__ = {};
   \***********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/css/style.css */ "./src/assets/css/style.css");
+/* harmony import */ var _assets_modules_navbar_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/modules/navbar.js */ "./src/assets/modules/navbar.js");
 
+
+(0,_assets_modules_navbar_js__WEBPACK_IMPORTED_MODULE_1__.navbar)();
 var button = document.querySelector('#button');
-document.querySelector('.input-button>input').focus();
+var input = document.querySelector('.input-button>input');
 button.addEventListener('click', function () {
-  var input = document.querySelector('.input-button>input');
-
   if (!input.value) {
     return alert('Digite seu tipo sanguíneo!');
   }
@@ -568,6 +623,19 @@ button.addEventListener('click', function () {
   handleBloodType(input.value.toUpperCase());
   input.value = '';
   input.focus();
+});
+input.addEventListener('keypress', function (event) {
+  var key = event.keyCode;
+
+  if (key === 13) {
+    if (!input.value) {
+      return alert('Digite seu tipo sanguíneo!');
+    }
+
+    handleBloodType(input.value.toUpperCase());
+    input.value = '';
+    input.focus();
+  }
 });
 
 function handleBloodType(bloodType) {
@@ -590,7 +658,7 @@ function createTable(type) {
     var th = document.createElement('th');
     var td = document.createElement('td');
     th.innerHTML = "Sangue ".concat(type);
-    td.innerHTML = "\n            Doa para: AB+ e A+ <br>\n            Recebe de: A+, A-, O+ e O-\n        ";
+    td.innerHTML = "\n            Doa para: AB+ e A+ <br><br>\n            Recebe de: A+, A-, O+ e O-\n        ";
     var array = [th, td];
 
     for (var _i = 0, _array = array; _i < _array.length; _i++) {
@@ -610,7 +678,7 @@ function createTable(type) {
     var _td = document.createElement('td');
 
     _th.innerHTML = "Sangue ".concat(type);
-    _td.innerHTML = "\n            Doa para: A+, A-, AB+ e AB- <br>\n            Recebe de: A- e O-\n        ";
+    _td.innerHTML = "\n            Doa para: A+, A-, AB+ e AB- <br><br>\n            Recebe de: A- e O-\n        ";
     var _array2 = [_th, _td];
 
     for (var _i2 = 0, _array3 = _array2; _i2 < _array3.length; _i2++) {
@@ -634,7 +702,7 @@ function createTable(type) {
     var _td2 = document.createElement('td');
 
     _th2.innerHTML = "Sangue ".concat(type);
-    _td2.innerHTML = "\n            Doa para: B+ e AB+ <br>\n            Recebe de: B+, B-, O+ e O- \n        ";
+    _td2.innerHTML = "\n            Doa para: B+ e AB+ <br><br>\n            Recebe de: B+, B-, O+ e O- \n        ";
     var _array4 = [_th2, _td2];
 
     for (var _i3 = 0, _array5 = _array4; _i3 < _array5.length; _i3++) {
@@ -658,7 +726,7 @@ function createTable(type) {
     var _td3 = document.createElement('td');
 
     _th3.innerHTML = "Sangue ".concat(type);
-    _td3.innerHTML = "\n        Doa para: B+, B-, AB+ e AB- <br>\n        Recebe de: B- e O-\n        ";
+    _td3.innerHTML = "\n        Doa para: B+, B-, AB+ e AB- <br><br>\n        Recebe de: B- e O-\n        ";
     var _array6 = [_th3, _td3];
 
     for (var _i4 = 0, _array7 = _array6; _i4 < _array7.length; _i4++) {
@@ -682,7 +750,7 @@ function createTable(type) {
     var _td4 = document.createElement('td');
 
     _th4.innerHTML = "Sangue ".concat(type);
-    _td4.innerHTML = "\n            Doa para: A+, B+, O+ e AB+ <br>\n            Recebe de: O+ e O-\n        ";
+    _td4.innerHTML = "\n            Doa para: A+, B+, O+ e AB+ <br><br>\n            Recebe de: O+ e O-\n        ";
     var _array8 = [_th4, _td4];
 
     for (var _i5 = 0, _array9 = _array8; _i5 < _array9.length; _i5++) {
@@ -706,7 +774,7 @@ function createTable(type) {
     var _td5 = document.createElement('td');
 
     _th5.innerHTML = "Sangue ".concat(type);
-    _td5.innerHTML = "\n            Doa para: A+, B+, O+, AB+, A-, B-, O- e AB- (todos)<br>\n            Recebe de: O-\n        ";
+    _td5.innerHTML = "\n            Doa para: A+, B+, O+, AB+, A-, B-, O- e AB- (todos)<br><br>\n            Recebe de: O-\n        ";
     var _array10 = [_th5, _td5];
 
     for (var _i6 = 0, _array11 = _array10; _i6 < _array11.length; _i6++) {
@@ -730,7 +798,7 @@ function createTable(type) {
     var _td6 = document.createElement('td');
 
     _th6.innerHTML = "Sangue ".concat(type);
-    _td6.innerHTML = "\n            Doa para: AB+ <br>\n            Recebe de: A+, B+, O+, AB+, A-, B-, O- e AB- (todos)\n        ";
+    _td6.innerHTML = "\n            Doa para: AB+ <br><br>\n            Recebe de: A+, B+, O+, AB+, A-, B-, O- e AB- (todos)\n        ";
     var _array12 = [_th6, _td6];
 
     for (var _i7 = 0, _array13 = _array12; _i7 < _array13.length; _i7++) {
