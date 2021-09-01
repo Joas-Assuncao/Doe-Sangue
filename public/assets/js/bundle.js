@@ -822,7 +822,7 @@ function createTable(type) {
     var _td7 = document.createElement('td');
 
     _th7.innerHTML = "Sangue ".concat(type);
-    _td7.innerHTML = "\n            Doa para: AB+ e AB- <br>\n            Recebe de: A-, B-, O- e AB-\n        ";
+    _td7.innerHTML = "\n            Doa para: AB+ e AB- <br><br>\n            Recebe de: A-, B-, O- e AB-\n        ";
     var _array14 = [_th7, _td7];
 
     for (var _i8 = 0, _array15 = _array14; _i8 < _array15.length; _i8++) {

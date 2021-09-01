@@ -194,7 +194,7 @@ function createTable(type) {
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
         td.innerHTML = `
-            Doa para: AB+ e AB- <br>
+            Doa para: AB+ e AB- <br><br>
             Recebe de: A-, B-, O- e AB-
         `;
         const array = [th, td];
