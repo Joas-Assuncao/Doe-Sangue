@@ -108,31 +108,25 @@ main #donates {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-main .input-button {
+main #donates div {
   display: flex;
   align-items: center;
-  padding: 3rem 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  width: 6rem;
+  padding: 0 1rem;
 }
-main .input-button input {
-  width: 70%;
-  padding: 1.5rem 2.5rem 1.5rem 1rem;
-  border-radius: 2rem 0 0 2rem;
-  border-bottom: 2px solid var(--blue2);
-  border-left: 2px solid var(--blue2);
-  border-top: 2px solid var(--blue2);
-  border-right: none;
-  color: var(--black);
-  font-size: 1.1rem;
+main .align-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3rem;
 }
-main .input-button input::placeholder {
-  color: var(--black);
-  font-size: 1.075rem;
-  opacity: 50%;
-}
-main .input-button button {
-  width: 30%;
-  padding: 1.5rem;
-  border-radius: 0 2rem 2rem 0;
+main .align-button #button {
+  width: 22rem;
+  padding: 1rem 0;
+  border-radius: 1rem;
   border-bottom: 2px solid var(--blue2);
   border-right: 2px solid var(--blue2);
   border-top: 2px solid var(--blue2);
@@ -142,7 +136,7 @@ main .input-button button {
   cursor: pointer;
   transition: 0.3s;
 }
-main .input-button button:hover {
+main .align-button #button:hover {
   box-shadow: 0 0 10px var(--blue);
   opacity: 80%;
 }

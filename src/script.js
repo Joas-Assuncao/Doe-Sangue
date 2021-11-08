@@ -4,52 +4,45 @@ import { navbar } from './assets/modules/navbar.js';
 navbar();
 
 const button = document.querySelector('#button');
-const input = document.querySelector('.input-button>input');
+const blood = [
+    document.querySelector('input[value="A+"]'),
+    document.querySelector('input[value="A-"]'),
+    document.querySelector('input[value="B+"]'),
+    document.querySelector('input[value="B-"]'),
+    document.querySelector('input[value="O+"]'),
+    document.querySelector('input[value="O-"]'),
+    document.querySelector('input[value="AB+"]'),
+    document.querySelector('input[value="AB-"]'),
+];
 
 button.addEventListener('click', () => {
-    if(!input.value) {
-        return alert('Digite seu tipo sanguíneo!');
-    }
-
-    handleBloodType(input.value.toUpperCase());
-
-    input.value = '';
-    input.focus();
+    const type = blood.reduce(checkInputs, 0);
+    createTable(type);
+    return;
 });
 
-input.addEventListener('keypress', event => {
+document.addEventListener('keypress', event => {
     const key = event.keyCode;
-    if(key === 13) {
-        if(!input.value) {
-            return alert('Digite seu tipo sanguíneo!');
-        }
-    
-        handleBloodType(input.value.toUpperCase());
-    
-        input.value = '';
-        input.focus();
+    if (key === 13) {
+        const type = blood.reduce(checkInputs, 0);
+        createTable(type);
+        return;
     }
 })
 
-function handleBloodType(bloodType) {
-    const types = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
-    let type;
-    types.forEach(value => {
-        if(value === bloodType) {
-            type = value;
-        }
-    });
-    
-    if(!type) return alert('Tipo sanguíneo inválido!');
+function checkInputs(accumulator, initial, index) {
+    if (blood[index].checked) {
+        accumulator = blood[index].value;
+    }
 
-    createTable(type);
+    return accumulator;
 }
 
 function createTable(type) {
     document.querySelector('.table').innerHTML = '';
     const table = document.createElement('table');
 
-    if(type === 'A+') {
+    if (type === 'A+') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -59,7 +52,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -69,7 +62,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'A-') {
+    if (type === 'A-') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -79,7 +72,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -89,7 +82,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'B+') {
+    if (type === 'B+') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -99,7 +92,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -109,7 +102,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'B-') {
+    if (type === 'B-') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -119,7 +112,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -129,7 +122,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'O+') {
+    if (type === 'O+') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -139,7 +132,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -149,7 +142,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'O-') {
+    if (type === 'O-') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -159,7 +152,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -169,7 +162,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'AB+') {
+    if (type === 'AB+') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -179,7 +172,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);
@@ -189,7 +182,7 @@ function createTable(type) {
         div.appendChild(table);
     }
 
-    if(type === 'AB-') {
+    if (type === 'AB-') {
         const th = document.createElement('th');
         const td = document.createElement('td');
         th.innerHTML = `Sangue ${type}`;
@@ -199,7 +192,7 @@ function createTable(type) {
         `;
         const array = [th, td];
 
-        for(let elements of array) {
+        for (let elements of array) {
             const tr = document.createElement('tr');
             tr.appendChild(elements);
             table.appendChild(tr);

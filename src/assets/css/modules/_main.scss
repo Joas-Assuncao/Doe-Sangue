@@ -38,49 +38,40 @@ main {
     
         margin-top: 3rem;
         margin-bottom: 3rem;
+
+        div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 6rem;
+
+            padding: 0 1rem;
+        }
     }
-    
-    .input-button {
+
+    .align-button {
         display: flex;
         align-items: center;
-        padding: 3rem 1.5rem;
+        justify-content: center;
         
-        input {
-            width: 70%;
+        width: 100%;
 
-            padding: 1.5rem 2.5rem 1.5rem 1rem;
-            
-            border-radius: 2rem 0 0 2rem;
-            border-bottom: 2px solid var(--blue2);
-            border-left: 2px solid var(--blue2);
-            border-top: 2px solid var(--blue2);
-            border-right: none;
+        margin-bottom: 3rem;
 
-            color: var(--black);
+        #button {
+            width: 22rem;
 
-            font-size: 1.1rem;
-            
-            &::placeholder {
-                color: var(--black);
-                
-                font-size: 1.075rem;
+            padding: 1rem 0;
 
-                opacity: 50%;
-            }
-        }
-    
-        button {
-            width: 30%;
-            
-            padding: 1.5rem;
-    
-            border-radius: 0 2rem 2rem 0;
+            border-radius: 1rem;
             
             border-bottom: 2px solid var(--blue2);
             border-right: 2px solid var(--blue2);
             border-top: 2px solid var(--blue2);
             border-left: none;
-    
+
             background: var(--blue);
 
             font-size: 1.2rem;
